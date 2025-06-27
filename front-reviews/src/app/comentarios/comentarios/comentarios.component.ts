@@ -3,6 +3,8 @@ import { Movie } from '../../interface/Movie';
 import { MoviesService } from '../../services/movies.service';
 import { CommonModule } from '@angular/common';
 
+
+
 @Component({
   selector: 'app-comentarios',
   standalone: true,
@@ -22,6 +24,7 @@ getMovies(): void {
     next: (response) => {
       this.movie = response.data; // Asignar los resultados a la propiedad movie
       console.log(this.movie);
+
     },
     error: (error) => {
       console.error('Error al obtener las películas:', error);
