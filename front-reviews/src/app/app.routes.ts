@@ -5,7 +5,12 @@ import { ComentariosComponent } from './comentarios/comentarios/comentarios.comp
 import { authGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-{path: '',component: ComentariosComponent},
+     {
+    path: '',
+    redirectTo: '/coments',
+    pathMatch: 'full'
+  },
+{path: 'coments',component: ComentariosComponent},
 {path: 'login', component: LoginComponent},
 {path: 'formulario', component: FormularioComponent, canActivate: [authGuard]},
 ];

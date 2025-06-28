@@ -17,7 +17,7 @@ export class MoviesService {
   private handleError(error:HttpErrorResponse)
   {
     let errorMessage = 'Ocurrio un error';
-    if(error.error instanceof ErrorEvent) 
+   if (typeof error.error === 'object' && error.error !== null && 'message' in error.error) 
       {
         errorMessage = `Error: ${error.error.message}`;
       }else

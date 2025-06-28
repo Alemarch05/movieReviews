@@ -1,1 +1,49 @@
-<p>formulario works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4">Agregar Película</h2>
+
+  <form (ngSubmit)="onsubmit()" #movieForm="ngForm">
+    <!-- Título -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        class="form-control"
+        [(ngModel)]="movie.title"
+        required
+      />
+    </div>
+
+    <!-- Director -->
+    <div class="mb-3">
+      <label for="director" class="form-label">Director</label>
+      <input
+        type="text"
+        id="director"
+        name="director"
+        class="form-control"
+        [(ngModel)]="movie.director"
+        required
+      />
+    </div>
+
+    <!-- Género -->
+    <div class="mb-3">
+      <label for="genre" class="form-label">Género</label>
+      <input
+        type="text"
+        id="genre"
+        name="genre"
+        class="form-control"
+        [(ngModel)]="movie.genre"
+        required
+      />
+    </div>
+
+    <!-- Botón enviar -->
+    <button type="submit" class="btn btn-primary" [disabled]="!movieForm.form.valid">
+      Guardar Película
+    </button>
+  </form>
+</div>
